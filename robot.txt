@@ -1,0 +1,77 @@
+# robots.txt для https://burn44.ru/
+# Обновлено: 24.08.2026
+
+User-agent: *
+# Разрешаем основные страницы
+Allow: /$
+Allow: /index.html
+Allow: /games.html
+Allow: /promos.html
+Allow: /about.html
+
+# Разрешаем CSS и JS — Google рекомендует не блокировать их для корректного рендеринга
+Allow: /styles/*.css
+Allow: /scripts/*.js
+
+# Разрешаем индексацию изображений (для Google Images и Яндекса)
+Allow: /images/
+Allow: /icons/
+
+# Запрещаем служебные папки и файлы
+Disallow: /fonts/
+Disallow: /scripts/modules/
+Disallow: /styles/blocks/
+Disallow: /styles/helpers/
+Disallow: /styles/*.scss
+Disallow: /styles/*.map
+Disallow: /scripts/*.json
+Disallow: /404.html
+Disallow: /*.json$
+Disallow: /*.scss$
+Disallow: /*.map$
+Disallow: /*?*
+
+# Sitemap
+Sitemap: https://burn44.ru/sitemap.xml
+
+# === Правила для Яндекса ===
+User-agent: Yandex
+Allow: /$
+Allow: /index.html
+Allow: /games.html
+Allow: /promos.html
+Allow: /about.html
+Allow: /styles/*.css
+Allow: /scripts/*.js
+Allow: /images/
+Allow: /icons/
+Disallow: /fonts/
+Disallow: /scripts/modules/
+Disallow: /styles/blocks/
+Disallow: /styles/helpers/
+Disallow: /styles/*.scss
+Disallow: /styles/*.map
+Disallow: /scripts/*.json
+Disallow: /404.html
+Disallow: /*.json$
+Disallow: /*.scss$
+Disallow: /*.map$
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid
+
+# === Правила для Google ===
+User-agent: Googlebot
+Allow: /
+Allow: /styles/
+Allow: /scripts/
+Allow: /images/
+Allow: /icons/
+Disallow: /fonts/
+Disallow: /404.html
+Disallow: /*.json$
+Disallow: /*.scss$
+Disallow: /*.map$
+
+# === Отдельные правила для Google Images ===
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /icons/

@@ -1,0 +1,127 @@
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: rem(24) 0;
+
+  &__inner {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // ===== Логотип =====
+  &__logo {
+    display: flex;
+    align-items: center;
+    transition: opacity var(--transition-duration);
+
+    @include hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__logo-icon {
+    width: rem(32);
+    height: rem(48);
+    fill: var(--color-light-10);
+  }
+
+  // ===== Социальные сети =====
+  &__socials {
+    display: flex;
+    gap: rem(24);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-duration);
+  }
+
+  &__social-icon {
+    width: rem(22);
+    height: rem(22);
+    fill: var(--color-light-35);
+    transition: fill var(--transition-duration), transform var(--transition-duration);
+  }
+
+  &__social-link:hover &__social-icon {
+    fill: var(--color-light-10);
+    transform: translateY(-2px);
+  }
+
+  // ===== Бургер =====
+  &__burger {
+    position: relative;
+    width: rem(32);
+    height: rem(20);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
+
+    &-line {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--color-light-35);
+      transition: all 0.3s ease;
+      transform-origin: center;
+
+      &:nth-child(2) {
+        width: 70%;
+        margin-left: auto;
+      }
+    }
+
+    @include hover {
+      .header__burger-line {
+        background-color: var(--color-light-10);
+
+        &:nth-child(1) {
+          transform: translateY(-2px);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(2px);
+        }
+      }
+    }
+
+    &.is-active {
+      .header__burger-line {
+        background-color: var(--color-light-10);
+        width: 100%;
+
+        &:nth-child(1) {
+          transform: translateY(9px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

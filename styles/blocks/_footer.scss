@@ -1,0 +1,290 @@
+
+
+.footer {
+  position: relative;
+  background-color: var(--color-dark-12);
+  color: var(--color-light-35);
+
+  &__container {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+  }
+
+  // ===== Верхняя часть с логотипом =====
+  &__top {
+    padding: rem(80) 0 rem(60);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    @include mobile {
+      padding: rem(50) 0 rem(40);
+    }
+  }
+
+  &__brand {
+    display: flex;
+    align-items: flex-start;
+    gap: rem(32);
+
+    @include mobile {
+      flex-direction: column;
+      gap: rem(20);
+    }
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(64);
+    height: rem(96);
+    transition: opacity var(--transition-duration);
+
+    @include hover {
+      opacity: 0.7;
+    }
+
+    &-icon {
+      width: 100%;
+      height: 100%;
+      fill: var(--color-light-10);
+    }
+  }
+
+  &__brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: rem(14);
+    padding-top: rem(8);
+  }
+
+  &__brand-title {
+    margin: 0;
+    font-family: var(--font-family-accent);
+    font-size: clamp(rem(48), 6vw, rem(88));
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 0.95;
+    color: var(--color-light-10);
+
+    em {
+      font-style: normal;
+      color: var(--color-accent);
+    }
+  }
+
+  &__brand-desc {
+    margin: 0;
+    font-size: rem(15);
+    line-height: 1.55;
+    color: var(--color-light-35);
+    max-width: rem(560);
+
+    @include mobile {
+      font-size: rem(14);
+    }
+  }
+
+  // ===== Средняя часть: сетка =====
+  &__middle {
+    padding: rem(50) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    @include mobile {
+      padding: rem(36) 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr 1fr;
+    gap: rem(40);
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+      gap: rem(36) rem(30);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: rem(32);
+    }
+  }
+
+  // ===== Колонка =====
+  &__col-title {
+    margin: 0 0 rem(20);
+    font-family: var(--font-family-accent);
+    font-size: rem(13);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+
+    @include mobile {
+      margin-bottom: rem(14);
+    }
+  }
+
+  // ===== Ссылки-список =====
+  &__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+
+    @include mobile {
+      gap: rem(10);
+    }
+
+    a {
+      display: inline-block;
+      font-size: rem(15);
+      font-weight: 500;
+      color: var(--color-light-30);
+      text-decoration: none;
+      transition: color var(--transition-duration), transform 0.3s ease;
+
+      @include hover {
+        color: var(--color-light-10);
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  // ===== Контакты =====
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: rem(14);
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &__contact {
+    font-size: rem(15);
+    font-weight: 500;
+    color: var(--color-light-30);
+    text-decoration: none;
+    transition: color var(--transition-duration);
+
+    @include hover {
+      color: var(--color-light-10);
+    }
+
+    &--static {
+      color: var(--color-light-35);
+      cursor: default;
+
+      @include hover {
+        color: var(--color-light-35);
+      }
+    }
+  }
+
+  // ===== Соцсети =====
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
+  &__social {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(14);
+    padding: rem(12) rem(16);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    text-decoration: none;
+    transition: all var(--transition-duration);
+
+    @include hover {
+      border-color: var(--color-accent);
+      background-color: rgba(253, 74, 79, 0.06);
+
+      .footer__social-label {
+        color: var(--color-light-10);
+      }
+
+      .footer__social-icon {
+        fill: var(--color-accent);
+      }
+    }
+
+    &-label {
+      font-family: var(--font-family-accent);
+      font-size: rem(14);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-light-30);
+      transition: color var(--transition-duration);
+    }
+
+    &-icon {
+      width: rem(18);
+      height: rem(18);
+      fill: var(--color-light-30);
+      transition: fill var(--transition-duration);
+      margin-left: auto;
+    }
+  }
+
+  // ===== Нижняя часть =====
+  &__bottom {
+    padding: rem(26) 0;
+
+    @include mobile {
+      padding: rem(20) 0;
+    }
+  }
+
+  &__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(20);
+    flex-wrap: wrap;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(14);
+    }
+  }
+
+  &__copy {
+    margin: 0;
+    font-size: rem(13);
+    color: var(--color-light-40);
+    letter-spacing: 0.01em;
+  }
+
+  &__legal {
+    display: flex;
+    gap: rem(24);
+
+    @include mobile {
+      flex-direction: column;
+      gap: rem(8);
+    }
+
+    a {
+      font-size: rem(13);
+      color: var(--color-light-40);
+      text-decoration: none;
+      transition: color var(--transition-duration);
+
+      @include hover {
+        color: var(--color-light-10);
+      }
+    }
+  }
+}

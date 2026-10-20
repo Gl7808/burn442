@@ -1,0 +1,74 @@
+BurnTV/
+├── fonts
+│   ├── arounder.otf
+│   ├── BebasNeue-Regular.woff2
+│   ├── Montserrat-Black.woff2
+│   ├── Montserrat-Bold.woff2
+│   ├── Montserrat-ExtraBold.woff2
+│   ├── Montserrat-ExtraLight.woff2
+│   ├── Montserrat-Light.woff2
+│   ├── Montserrat-Medium.woff2
+│   ├── Montserrat-Regular.woff2
+│   ├── Montserrat-SemiBold.woff2
+│   ├── Montserrat-Thin.woff2
+│   ├── Roboto-Black.woff2
+│   ├── Roboto-Bold.woff2
+│   ├── Roboto-ExtraBold.woff2
+│   ├── Roboto-ExtraLight.woff2
+│   ├── Roboto-Light.woff2
+│   ├── Roboto-Medium.woff2
+│   ├── Roboto-Regular.woff2
+│   └── Roboto-SemiBold.woff2
+├── icons
+│   ├── hardware
+│   │   ├── chair.svg
+│   │   ├── cpu.svg
+│   │   ├── headphone.svg
+│   │   ├── image.svg
+│   │   ├── keyboard.svg
+│   │   ├── mouse.svg
+│   │   ├── ram.svg
+│   │   └── screen.svg
+│   ├── 11.png
+│   ├── 24.svg
+│   ├── 9.png
+│   ├── arrow.svg
+│   ├── diamond.svg
+│   ├── lightning.svg
+│   ├── map_icon.svg
+│   ├── nav.svg
+│   ├── phone.svg
+│   ├── pin.svg
+│   ├── square-info.svg
+│   ├── telegram.svg
+│   ├── time.svg
+│   ├── twitch.svg
+│   ├── vk.svg
+│   └── way.svg
+├── images
+│   └── stroke_white.svg
+├── scripts
+│   ├── modules
+│   └── main.js
+├── styles
+│   ├── blocks
+│   ├── helpers
+│   │   ├── _functions.scss
+│   │   ├── _index.scss
+│   │   ├── _media.scss
+│   │   └── _mixins.scss
+│   ├── _fonts.scss
+│   ├── _globals.scss
+│   ├── _normalize.scss
+│   ├── _utils.scss
+│   ├── _variables.scss
+│   ├── main.css
+│   ├── main.css.map
+│   └── main.scss
+├── data.json
+├── favicon.ico
+├── index.html
+├── package.json
+├── robot.txt
+├── sitemap.xml
+└── test.html

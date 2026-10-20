@@ -1,0 +1,56 @@
+{
+  "scenes": [
+    {
+      "type": "prices",
+      "duration": 15000,
+      "data": {
+        "zones": [
+          {
+            "title": "Общая зона",
+            "icon": "icons/hardware/cpu.svg",
+            "items": [
+              { "time": "1 час", "price": "150 ₽" },
+              { "time": "3 часа", "price": "400 ₽" },
+              { "time": "Пакет 'Ночь' (22:00 - 08:00)", "price": "600 ₽" }
+            ]
+          },
+          {
+            "title": "VIP зона",
+            "icon": "icons/hardware/chair.svg",
+            "items": [
+              { "time": "1 час", "price": "250 ₽" },
+              { "time": "3 часа", "price": "700 ₽" },
+              { "time": "Пакет 'Ночь' (22:00 - 08:00)", "price": "900 ₽" }
+            ]
+          },
+          {
+            "title": "PS5 Zone",
+            "icon": "icons/hardware/headphone.svg",
+            "items": [
+              { "time": "1 час", "price": "200 ₽" },
+              { "time": "3 часа", "price": "550 ₽" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "promos",
+      "duration": 10000,
+      "data": {
+        "items": [
+          {
+            "title": "ДЕНЬ РОЖДЕНИЯ",
+            "description": "Скидка 20% именинникам и 3 друзьям при предъявлении паспорта. Действует 3 дня до и после даты!",
+            "highlight": true
+          },
+          {
+            "title": "СТУДЕНЧЕСКИЙ ДЕНЬ",
+            "description": "Скидка 15% по студенческому билету в будние дни с 12:00 до 18:00.",
+            "highlight": false
+          }
+        ]
+      }
+    }
+  ]
+}

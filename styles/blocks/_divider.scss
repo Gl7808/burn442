@@ -1,0 +1,36 @@
+
+.divider {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  overflow: hidden;
+  background-color: var(--color-dark-12);
+  &__text{
+    z-index: 3 !important;
+    font-size: rem(40);
+    color: #FFF;
+  }
+
+  // ===== Фоновая картинка =====
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: grayscale(0.3) brightness(0.85);
+    will-change: transform;
+  }
+
+  // ===== Акцентный оверлей =====
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(253, 74, 79, 0.95); // var(--color-accent) с прозрачностью
+    mix-blend-mode: multiply; // делает картинку «вжаренной» в цвет
+    pointer-events: none;
+  }
+
+}

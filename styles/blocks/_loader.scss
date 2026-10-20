@@ -1,0 +1,148 @@
+
+.loader {
+  --loader-size: #{rem(300)};
+  --tick-radius: #{rem(118)};
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-dark-12);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+
+  @include mobile {
+    --loader-size: #{rem(240)};
+    --tick-radius: #{rem(92)};
+  }
+
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__content {
+    position: relative;
+    width: var(--loader-size);
+    height: var(--loader-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // ===== Прицел =====
+  &__scope {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__ticks {
+    position: absolute;
+    inset: 0;
+  }
+
+  // ===== Риски =====
+  &__tick {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: rem(10);
+    border-radius: 1px;
+    background-color: var(--color-light-40);
+    transform:
+            translate(-50%, -50%)
+            rotate(var(--tick-angle))
+            translateY(calc(var(--tick-radius) * -1));
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, height 0.2s ease;
+
+    // Каждая 5-я риска чуть длиннее
+    &--major {
+      height: rem(16);
+    }
+
+    // Активная (загруженная) риска
+    &.is-active {
+      background-color: var(--color-light-10);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
+    }
+  }
+
+  // ===== Перекрестие =====
+  &__crosshair {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &__cross {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.22);
+
+    &--top,
+    &--bottom {
+      left: 50%;
+      width: 1px;
+      height: rem(20);
+      transform: translateX(-50%);
+    }
+
+    &--left,
+    &--right {
+      top: 50%;
+      height: 1px;
+      width: rem(20);
+      transform: translateY(-50%);
+    }
+
+    &--top    { top: rem(18); }
+    &--bottom { bottom: rem(18); }
+    &--left   { left: rem(18); }
+    &--right  { right: rem(18); }
+  }
+
+  // ===== Процент =====
+  &__percent {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family-accent);
+    font-weight: 700;
+    font-size: rem(54);
+    letter-spacing: 0.02em;
+    color: var(--color-light-10);
+    user-select: none;
+
+    &::after {
+      content: '%';
+      margin-left: rem(3);
+      font-size: 0.42em;
+      opacity: 0.55;
+    }
+  }
+
+  // ===== Название =====
+  &__title {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family-accent);
+    font-weight: 900;
+    font-size: rem(68);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-light-10);
+    opacity: 0;
+    visibility: hidden;
+
+    @include mobile {
+      font-size: rem(46);
+    }
+  }
+}

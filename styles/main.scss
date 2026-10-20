@@ -1,0 +1,31 @@
+@use "normalize";
+@use "fonts";
+@use "variables";
+@use "utils";
+@use "globals";
+@use 'helpers' as *;
+
+
+@import
+'blocks/loader',
+'blocks/header',
+'blocks/slide-menu',
+'blocks/hero',
+'blocks/divider',
+'blocks/modal',
+'blocks/about',
+'blocks/lightbox',
+'blocks/advantages',
+'blocks/contacts',
+'blocks/games',
+'blocks/hardware',
+'blocks/prices',
+'blocks/promo',
+'blocks/bar',
+'blocks/catalog',
+'blocks/gallery',
+'blocks/contacts-page',
+'blocks/page-transition',
+'blocks/footer'
+
+;

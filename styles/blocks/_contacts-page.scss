@@ -1,0 +1,418 @@
+.contacts-hero {
+  position: relative;
+  padding: rem(140) 0 rem(60);
+  background-color: var(--color-dark-12);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  @include mobile {
+    padding: rem(100) 0 rem(40);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+                    180deg,
+                    rgba(1, 1, 1, 0.35) 0%,
+                    rgba(1, 1, 1, 0.45) 50%,
+                    rgba(5, 5, 5, 1) 100%
+    );
+    pointer-events: none;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: rem(800);
+  }
+
+  &__tag {
+    display: inline-block;
+    margin-bottom: rem(20);
+    font-family: var(--font-family-accent);
+    font-size: rem(13);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+  }
+
+  &__title {
+    margin: 0 0 rem(22);
+    font-family: var(--font-family-accent);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(rem(48), 6vw, rem(96));
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: var(--color-light-10);
+
+    span {
+      color: var(--color-accent);
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    max-width: rem(600);
+    font-size: rem(16);
+    line-height: 1.65;
+    color: var(--color-light-35);
+
+    @include mobile {
+      font-size: rem(15);
+    }
+  }
+}
+
+.contacts-info {
+  position: relative;
+  padding: rem(50) 0 rem(60);
+  background-color: var(--color-dark-12);
+
+  @include mobile {
+    padding: rem(30) 0 rem(40);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-bottom: rem(40);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+    padding: rem(24) rem(20);
+    background-color: var(--color-dark-10);
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+
+    @include mobile {
+      padding: rem(20) rem(18);
+      gap: rem(14);
+    }
+
+    @include hover {
+      background-color: rgba(253, 74, 79, 0.04);
+
+      .contacts-info__card-icon {
+        background-color: var(--color-accent);
+        color: var(--color-light-10);
+      }
+
+      .contacts-info__card-arrow {
+        opacity: 1;
+        transform: translateX(0);
+        color: var(--color-accent);
+      }
+
+      .contacts-info__card-value {
+        color: var(--color-light-10);
+      }
+    }
+
+    &--static {
+      cursor: default;
+
+      @include hover {
+        background-color: var(--color-dark-10);
+
+        .contacts-info__card-arrow {
+          opacity: 0;
+        }
+      }
+    }
+
+    &-icon {
+      flex-shrink: 0;
+      width: rem(44);
+      height: rem(44);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(253, 74, 79, 0.08);
+      color: var(--color-accent);
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      @include mobile {
+        width: rem(40);
+        height: rem(40);
+      }
+
+      svg {
+        width: rem(20);
+        height: rem(20);
+
+        @include mobile {
+          width: rem(18);
+          height: rem(18);
+        }
+      }
+    }
+
+    &-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: rem(3);
+      min-width: 0;
+    }
+
+    &-label {
+      font-family: var(--font-family-accent);
+      font-size: rem(10);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-accent);
+    }
+
+    &-value {
+      font-size: rem(15);
+      font-weight: 600;
+      color: var(--color-light-30);
+      line-height: 1.3;
+      transition: color 0.3s ease;
+
+      @include mobile {
+        font-size: rem(14);
+      }
+    }
+
+    &-arrow {
+      flex-shrink: 0;
+      font-size: rem(18);
+      color: var(--color-light-35);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+
+    & + & {
+      border-left: 1px solid rgba(255, 255, 255, 0.06);
+
+      @include laptop {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+  }
+
+  &__socials-title {
+    margin: 0;
+    font-family: var(--font-family-accent);
+    font-size: rem(13);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-light-40);
+  }
+
+  &__socials-list {
+    display: flex;
+    gap: rem(12);
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__social {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(12);
+    padding: rem(14) rem(20);
+    background-color: var(--color-dark-10);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+    color: var(--color-light-10);
+    transition: all 0.3s ease;
+
+    @include mobile {
+      padding: rem(12) rem(18);
+    }
+
+    svg {
+      width: rem(18);
+      height: rem(18);
+      fill: var(--color-light-30);
+      transition: fill 0.3s ease;
+    }
+
+    span {
+      font-family: var(--font-family-accent);
+      font-size: rem(13);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    @include hover {
+      border-color: var(--color-accent);
+      background-color: rgba(253, 74, 79, 0.06);
+
+      svg {
+        fill: var(--color-accent);
+      }
+
+      span {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
+
+.contacts-map {
+  position: relative;
+  padding: rem(60) 0 rem(80);
+  background-color: var(--color-dark-12);
+
+  @include mobile {
+    padding: rem(40) 0 rem(50);
+  }
+
+  &__head {
+    max-width: rem(700);
+    margin-bottom: rem(36);
+  }
+
+  &__title {
+    margin: 0 0 rem(14);
+    font-size: clamp(rem(36), 4vw, rem(56));
+    line-height: 1;
+
+    span {
+      color: var(--color-accent);
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    font-size: rem(15);
+    line-height: 1.6;
+    color: var(--color-light-35);
+  }
+
+  &__frame {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: rem(500);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    @include mobile {
+      height: 60vh;
+      min-height: rem(400);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background-color: rgba(5, 5, 5, 0.4);
+      backdrop-filter: grayscale(100%) invert(92%) contrast(1.1);
+      pointer-events: auto;
+      transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+    }
+
+    &:hover::after {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.contacts-cta {
+  position: relative;
+  padding: rem(80) 0;
+  background-color: var(--color-dark-10);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  @include mobile {
+    padding: rem(50) 0;
+  }
+
+  &__content {
+    max-width: rem(700);
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  &__title {
+    margin: 0 0 rem(18);
+    font-size: clamp(rem(36), 4vw, rem(56));
+    line-height: 1;
+
+    span {
+      color: var(--color-accent);
+    }
+  }
+
+  &__desc {
+    margin: 0 0 rem(32);
+    font-size: rem(16);
+    line-height: 1.6;
+    color: var(--color-light-35);
+
+    @include mobile {
+      font-size: rem(15);
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(56);
+    padding: 0 rem(40);
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    color: var(--color-light-10);
+    font-family: var(--font-family-accent);
+    font-weight: 700;
+    font-size: rem(14);
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    cursor: pointer;
+    transition: all var(--transition-duration);
+
+    @include hover {
+      background-color: var(--color-light-10);
+      border-color: var(--color-light-10);
+      color: var(--color-dark-5);
+    }
+  }
+}
